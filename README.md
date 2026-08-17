@@ -69,3 +69,8 @@ Produces an unpacked extension in `dist/` ready to load or zip for the Chrome We
   inherent to real-time pitch shifting, not a bug.
 - Works on standard YouTube watch pages. YouTube is a single-page app, so the extension
   binds to the shared `<video>` element and persists across in-app navigation.
+
+## Privacy
+
+The extension collects no data — all audio processing happens locally in your browser,
+and nothing is ever transmitted. See [PRIVACY.md](PRIVACY.md) for the full policy.
