@@ -4,16 +4,16 @@ A sleek Chrome extension for **musicians** that transposes the pitch of any YouT
 in real time — without changing the playback speed. Shift up or down across a ±12 semitone
 range to play or sing along in your key.
 
-![panel](docs/panel.png)
-
 ## How it works
 
 ```
-YouTube <video> → Web Audio MediaElementSource → Tone.js PitchShift → speakers
+YouTube <video> → MediaElementSource → AudioWorkletNode (SoundTouchJS) → speakers
 ```
 
-- **[Tone.js](https://tonejs.github.io/)** provides the `PitchShift` node — a granular
-  pitch shifter that transposes audio while the video keeps playing at its normal rate.
+- **[SoundTouchJS](https://github.com/cutterbl/SoundTouchJS)** (WSOLA) transposes the audio
+  while the video keeps playing at its normal rate — clean pitch shifting, no warble.
+- Processing runs on an **AudioWorkletNode** (the audio render thread) for low latency and
+  no UI jank, with a `ScriptProcessorNode` fallback if a page's CSP blocks the worklet.
 - A **content script** taps into the page's `<video>` element and builds the audio graph.
 - The UI is a **React + Tailwind** panel mounted inside a **Shadow DOM**, so Tailwind's
   styles are fully isolated from YouTube (nothing leaks in either direction).
@@ -25,7 +25,7 @@ YouTube <video> → Web Audio MediaElementSource → Tone.js PitchShift → spea
 | Bundler          | Vite + [@crxjs/vite-plugin](https://crxjs.dev/) (MV3) |
 | UI               | React 18 + TypeScript               |
 | Styling          | Tailwind CSS (no hand-rolled CSS)   |
-| Audio            | Tone.js `PitchShift`                |
+| Audio            | SoundTouchJS on an AudioWorkletNode |
 
 ## Develop
 
