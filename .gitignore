@@ -7,3 +7,6 @@ dist
 
 # generated worklet bundle
 public/pitch-processor.js
+
+# packaged Web Store archives
+*.zip

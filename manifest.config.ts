@@ -1,10 +1,12 @@
 import { defineManifest } from '@crxjs/vite-plugin';
+import { version } from './package.json';
 
 export default defineManifest({
   manifest_version: 3,
   name: 'YouTube Pitch Shifter',
-  version: '1.0.0',
-  description: 'Change the pitch of any YouTube video with a sleek slider — powered by Tone.js.',
+  // Single source of truth: bump `version` in package.json only.
+  version,
+  description: 'Change the pitch of any YouTube video with a sleek slider — without changing playback speed.',
   icons: {
     16: 'src/assets/icon-16.png',
     48: 'src/assets/icon-48.png',
