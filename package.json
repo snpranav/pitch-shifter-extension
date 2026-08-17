@@ -8,6 +8,7 @@
     "build:worklet": "node_modules/.pnpm/node_modules/.bin/esbuild src/worklet/pitchProcessor.js --bundle --format=iife --target=es2020 --outfile=public/pitch-processor.js",
     "dev": "npm run build:worklet && vite",
     "build": "npm run build:worklet && tsc -b && vite build",
+    "package": "npm run build && node scripts/package.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
