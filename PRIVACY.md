@@ -56,5 +56,6 @@ a new "Last updated" date.
 
 ## Contact
 
-Questions about this policy? Contact **me@snpranav.com** or open an issue on the
-[GitHub repository](https://github.com/snpranav/pitch-shifter-extension).
+Questions about this policy? Please
+[open an issue](https://github.com/snpranav/pitch-shifter-extension/issues) on the
+GitHub repository to reach the creator.
