@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * The panel lives inside a Shadow DOM, so these styles are fully isolated from
+ * YouTube. Tailwind's `accent-*` utilities style the native range slider, so we
+ * only add the couple of range-track tweaks Tailwind can't express as classes.
+ */
+@layer components {
+  .ps-range {
+    @apply h-1.5 w-full cursor-pointer appearance-none rounded-full bg-white/15 accent-violet-500;
+  }
+}

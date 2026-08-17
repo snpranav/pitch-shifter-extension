@@ -1,0 +1,30 @@
+{
+  "name": "youtube-pitch-shifter",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A sleek Chrome extension to change the pitch of any YouTube video.",
+  "scripts": {
+    "build:worklet": "node_modules/.pnpm/node_modules/.bin/esbuild src/worklet/pitchProcessor.js --bundle --format=iife --target=es2020 --outfile=public/pitch-processor.js",
+    "dev": "npm run build:worklet && vite",
+    "build": "npm run build:worklet && tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "soundtouchjs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@crxjs/vite-plugin": "^2.0.0-beta.28",
+    "@types/chrome": "^0.0.287",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  }
+}
